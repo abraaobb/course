@@ -7,6 +7,7 @@ class Course(models.Model):
     name = models.CharField(max_length=40, null=False)
     created_at = models.DateTimeField(null=False, auto_now_add=True)
     modified_at = models.DateTimeField(null=False, auto_now=True)
+    active = models.BooleanField(null=False, default=True)
 
     class Meta:
         db_table = 'course'
