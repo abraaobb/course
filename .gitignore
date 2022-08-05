@@ -4,3 +4,5 @@ course/__pycache__/
 core/__pycache__/
 
 core/migrations/__pycache__/
+
+curso_db
