@@ -5,23 +5,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    initial = True
-
     dependencies = [
+        ('core', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Course',
+            name='Student',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('modified_at', models.DateTimeField(auto_now=True)),
                 ('active', models.BooleanField(default=True)),
-                ('name', models.CharField(max_length=40)),
+                ('name', models.CharField(max_length=100)),
             ],
             options={
-                'db_table': 'course',
+                'db_table': 'student',
                 'managed': True,
             },
         ),

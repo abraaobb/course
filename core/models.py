@@ -22,13 +22,27 @@ class Course(ModelBase):
 
 class Student(ModelBase):
     name = models.CharField(max_length=100, null=False)
+
+    class Meta:
+        db_table = 'student'
+        managed = True
+
+
+class CourseStudent(ModelBase):
     course = models.ForeignKey(
         to='Course',
         on_delete=models.DO_NOTHING,
         db_column='id_course',
         null=False
     )
+    student = models.ForeignKey(
+        to='Student',
+        on_delete=models.DO_NOTHING,
+        db_column='id_student',
+        null=False,
+    )
 
     class Meta:
-        db_table = 'student'
+        db_table = 'student_course'
         managed = True
+        unique_together = [('student', 'course')]

@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'course.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'curso_db',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'course',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'USER': 'postgres',
+        'PASSWORD': '123456'
     }
 }
 
